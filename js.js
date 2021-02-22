@@ -38,10 +38,12 @@ function stop() {
 
 setInterval(function () {
   var m = window.getComputedStyle(sam).getPropertyValue("background-image");
-  console.log(m);
-  if (m === `url("https://ga021396.github.io/Sam1268/IMG/GAN1.jpg")`)
+
+  if (m === `url("https://ga021396.github.io/Sam1268/IMG/GAN1.jpg")`) {
+    console.log(m);
     sam.style.backgroundImage = `url("https://ga021396.github.io/Sam1268/IMG/GAN2.jpg")`;
-  else {
+  } else {
+    console.log(m);
     sam.style.backgroundImage = `url("https://ga021396.github.io/Sam1268/IMG/GAN1.jpg")`;
   }
 }, 200);
