@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>超志祥</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="game">
+      <div id="sam"></div>
+      <div id="snowBall"></div>
+    </div>
+    <div class="btnCon">
+      <div>
+        <button id="startBtn">start</button>
+        <button id="jumpBtn" onclick="gan()" class="hidden">jump</button>
+      </div>
+      <div>
+        <span id="count">0</span>
+        /5920
+      </div>
+      <!-- <img src="IMG/bHcueso.jpg" width="400" id="image" class="hidden" /> -->
+      <video width="320" height="240" controls id="image" class="hidden">
+        <source src="movie.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <script>
+      const startBtn = document.getElementById("startBtn");
+      startBtn.addEventListener("click", () => {
+        var head = document.getElementsByTagName("head")[0],
+          script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "js.js";
+        image.classList.add("hidden");
+        head.appendChild(script);
+        startBtn.classList.add("hidden");
+        jumpBtn.classList.remove("hidden");
+      });
+
+      function gan() {
+        if (sam.classList !== "sam") {
+          sam.classList.add("jump");
+          setTimeout(() => {
+            sam.classList.remove("jump");
+          }, 300);
+        }
+      }
+    </script>
+  </body>
+</html>
