@@ -21,7 +21,7 @@ let timer = setInterval(function () {
     window.getComputedStyle(snowBall).getPropertyValue("left")
   );
   if (snowBallLeft < 50 && snowBallLeft > 0 && samTop < 90) {
-    count += 1000 * Math.random();
+    count += 50 * Math.random();
     CO.innerHTML = Math.round(count);
   }
 }, 10);
@@ -38,12 +38,10 @@ function stop() {
 
 setInterval(function () {
   var m = window.getComputedStyle(sam).getPropertyValue("background-image");
-  if (
-    m ===
-    `url("file:///C:/Users/WindChi/Desktop/F2E/MyWebSite/SAM/IMG/GAN1.jpg")`
-  )
-    sam.style.backgroundImage = `url("file:///C:/Users/WindChi/Desktop/F2E/MyWebSite/SAM/IMG/GAN2.jpg")`;
+  console.log(m);
+  if (m === `url('IMG/GAN1.jpg')`)
+    sam.style.backgroundImage = `url('IMG/GAN2.jpg')`;
   else {
-    sam.style.backgroundImage = `url("file:///C:/Users/WindChi/Desktop/F2E/MyWebSite/SAM/IMG/GAN1.jpg")`;
+    sam.style.backgroundImage = `url('IMG/GAN1.jpg')`;
   }
 }, 200);
