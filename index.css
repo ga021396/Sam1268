@@ -1,0 +1,174 @@
+.game {
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+#sam {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 150px;
+  background-image: url(IMG/GAN1.jpg);
+  background-size: 50px 50px;
+}
+#wep {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  background-image: url(IMG/WEP.png);
+  background-size: 50px 50px;
+  transition: 0.3s all;
+}
+
+.kick {
+  transform: rotate(90deg);
+  left: 30px !important;
+}
+
+.jump {
+  animation: jump 0.3s linear;
+}
+
+@keyframes gan {
+  0% {
+    background-image: url(IMG/GAN1.jpg);
+  }
+  50% {
+    background-image: url(IMG/GAN2.jpg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  10% {
+    top: 130px;
+  }
+  20% {
+    top: 110px;
+  }
+  30% {
+    top: 90px;
+  }
+  40% {
+    top: 70px;
+  }
+  50% {
+    top: 50px;
+  }
+  60% {
+    top: 70px;
+  }
+  70% {
+    top: 90px;
+  }
+  80% {
+    top: 110px;
+  }
+  90% {
+    top: 130px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+#snowBall {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 50px;
+  left: 580px;
+  border: 1px solid black;
+  background-image: url(IMG/snow.jpg);
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.run {
+  animation: run 1s infinite linear;
+}
+
+.run2 {
+  animation: run2 1s infinite linear;
+}
+
+.fly {
+  animation: fly 0.3s linear;
+}
+
+@keyframes fly {
+  0% {
+    left: 50px;
+    top: 50px;
+  }
+  100% {
+    left: 600px;
+    top: -300px;
+  }
+}
+
+@keyframes run {
+  0% {
+    left: 580px;
+    transform: rotate(0turn);
+  }
+  100% {
+    left: -40px;
+    transform: rotate(0.5turn);
+  }
+}
+
+@keyframes run2 {
+  0% {
+    left: 580px;
+    top: 50px;
+    transform: rotate(0turn);
+  }
+  100% {
+    left: -40px;
+    top: -300px;
+    transform: rotate(0.5turn);
+  }
+}
+
+#startBtn {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: auto;
+}
+#jumpBtn {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.btnCon {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
