@@ -36,6 +36,7 @@ let timer = setInterval(function () {
 
 function stop() {
   snowBall.classList.add("run2");
+  wep.classList.add("kickAni");
   image.classList.remove("hidden");
   document.removeEventListener("keydown", gan, true);
   audio.pause();

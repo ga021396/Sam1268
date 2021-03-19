@@ -29,6 +29,21 @@
   left: 30px !important;
 }
 
+.kickAni {
+  animation: kick 0.3s linear infinite;
+}
+
+@keyframes kick {
+  0% {
+    transform: rotate(0deg);
+    left: -30px;
+  }
+  100% {
+    transform: rotate(90deg);
+    left: 30px;
+  }
+}
+
 .jump {
   animation: jump 0.3s linear;
 }
@@ -129,6 +144,11 @@
     left: 580px;
     top: 50px;
     transform: rotate(0turn);
+  }
+  80% {
+    left: 0;
+    top: 50px;
+    transform: rotate(0.3turn);
   }
   100% {
     left: -40px;
