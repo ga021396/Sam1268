@@ -1,17 +1,19 @@
 const sam = document.getElementById("sam");
 const snowBall = document.getElementById("snowBall");
 const image = document.getElementById("image");
+const wep = document.getElementById("wep");
 let CO = document.getElementById("count");
 
 const audio = new Audio("MUSIC.mp3");
 let count = 0;
 
+audio.volume = 0.1;
 audio.play();
 snowBall.classList.add("run");
 
 let timer = setInterval(function () {
-  if (count > 5920) {
-    count = 5920;
+  if (count > 7414) {
+    count = 7414;
     CO.innerHTML = Math.round(count);
     clearInterval(timer);
     stop();
@@ -21,18 +23,25 @@ let timer = setInterval(function () {
     window.getComputedStyle(snowBall).getPropertyValue("left")
   );
   if (snowBallLeft < 50 && snowBallLeft > 0 && samTop < 90) {
-    count += 50 * Math.random();
+    count += 1000 * Math.random();
     CO.innerHTML = Math.round(count);
+    snowBall.classList.add("fly");
+    snowBall.classList.remove("run");
+    setTimeout(() => {
+      snowBall.classList.remove("fly");
+      if (count !== 7414) snowBall.classList.add("run");
+    }, 300);
   }
 }, 10);
 
 function stop() {
-  snowBall.classList.remove("run");
+  snowBall.classList.add("run2");
   image.classList.remove("hidden");
   document.removeEventListener("keydown", gan, true);
   audio.pause();
   audio.currentTime = 0;
   image.play();
+  snowBall.classList.remove("run");
   $("script[src='js.js']").remove();
 }
 
