@@ -7,9 +7,7 @@
   </head>
   <body>
     <div class="game">
-      <div id="sam">
-        <div id="wep"></div>
-      </div>
+      <div id="sam"></div>
       <div id="snowBall"></div>
     </div>
     <div class="btnCon">
@@ -21,7 +19,10 @@
         <span id="count">0</span>
         /5920
       </div>
-      <img src="IMG/IMG_4445.JPG" width="400" id="image" class="hidden" />
+      <video width="320" height="240" controls id="image" class="hidden"> 
+        <source src="video.mp4" type="video/mp4" /> 
+      </video> 
+      </iframe>
     </div>
     <script>
       const startBtn = document.getElementById("startBtn");
@@ -39,10 +40,8 @@
       function gan() {
         if (sam.classList !== "sam") {
           sam.classList.add("jump");
-          wep.classList.add("kick");
           setTimeout(() => {
             sam.classList.remove("jump");
-            wep.classList.remove("kick");
           }, 300);
         }
       }

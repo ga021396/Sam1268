@@ -1,13 +1,13 @@
 const sam = document.getElementById("sam");
 const snowBall = document.getElementById("snowBall");
 const image = document.getElementById("image");
-const wep = document.getElementById("wep");
 let CO = document.getElementById("count");
+let count = 0;
+let colorNum = 255 / 7414;
 
 const audio = new Audio("MUSIC.mp3");
-let count = 0;
 
-audio.volume = 0.1;
+audio.volume = 0.5;
 audio.play();
 snowBall.classList.add("run");
 
@@ -24,19 +24,20 @@ let timer = setInterval(function () {
   );
   if (snowBallLeft < 50 && snowBallLeft > 0 && samTop < 90) {
     count += 1000 * Math.random();
+    let color = colorNum * count;
     CO.innerHTML = Math.round(count);
-    snowBall.classList.add("fly");
     snowBall.classList.remove("run");
+    sam.style.backgroundColor = `rgb(${255 - color},${255 - color},${
+      255 - color
+    })`;
+    console.log(colorNum, color, count);
     setTimeout(() => {
-      snowBall.classList.remove("fly");
       if (count !== 7414) snowBall.classList.add("run");
     }, 300);
   }
 }, 10);
 
 function stop() {
-  snowBall.classList.add("run2");
-  wep.classList.add("kickAni");
   image.classList.remove("hidden");
   document.removeEventListener("keydown", gan, true);
   audio.pause();
@@ -45,15 +46,3 @@ function stop() {
   snowBall.classList.remove("run");
   $("script[src='js.js']").remove();
 }
-
-setInterval(function () {
-  var m = window.getComputedStyle(sam).getPropertyValue("background-image");
-
-  if (m === `url("https://ga021396.github.io/Sam1268/IMG/GAN1.jpg")`) {
-    console.log(m);
-    sam.style.backgroundImage = `url("https://ga021396.github.io/Sam1268/IMG/GAN2.jpg")`;
-  } else {
-    console.log(m);
-    sam.style.backgroundImage = `url("https://ga021396.github.io/Sam1268/IMG/GAN1.jpg")`;
-  }
-}, 200);
